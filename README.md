@@ -80,7 +80,7 @@ Array [
 ]
 ```
 
-Getting  heads around Immutable collections
+## Getting  heads around Immutable collections
 
 Immutable lets us create complex objects comprising such things as JavaScript objects, arrays, or even nested arrays of objects with arrays, with each complex object acting as an unchanging value. However, this is difficult to picture, as we’re so used to JavaScript objects containing properties with constantly changing values. Think of a user object, for example, containing properties such as username, emailAddress, age, etc. These values could change at any time.
 
