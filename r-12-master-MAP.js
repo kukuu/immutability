@@ -1,4 +1,8 @@
 /*
+Author: Alexander Adu-Sarkodie
+
+Note: The result of an execution of a block snippet is hilighted after the output comment. Within console.log()
+
 What is an Immutable Map?
 
 An Immutable Map is an unordered collection of key/value pairs that at first glance
@@ -17,9 +21,9 @@ Here’s how to create one.*/
 
 // Empty Map:
 const map = Immutable.Map();
-​
+
 // Output:
-map;
+console.log(map);
 
 Object {}
 
@@ -47,9 +51,9 @@ const avengersArray = [
   ['heroName2', 'captainAmerica']
 ];
 const avengersMap = Immutable.Map(avengersArray);
-​
+
 // Output:
-avengersMap;
+console.log(avengersMap);
 
 Object {
   "heroName1": "ironMan",
@@ -67,9 +71,9 @@ const avengersObj = {
   captainAmerica: 'Steve Rogers'
 };
 const avengersMap = Immutable.Map(avengersObj);
-​
+
 // Output:
-avengersMap;
+console.log(avengersMap);
 
 Object {
   "captainAmerica": "Steve Rogers",
@@ -96,21 +100,21 @@ const avengers = {
     }
   }
 };
-​
+
 // Create the Map
 const avengersMap = Immutable.Map(Immutable.fromJS(avengers));
-​
+
 // Test that we have a deeply nested Map
 const ironMan = avengersMap.getIn(['hero1', 'ironMan']);
-​
+
 // Output:
-Immutable.Map.isMap(ironMan);
+console.log(Immutable.Map.isMap(ironMan));
 
 true
 
 // Try removing Immuable.fromJS in the code above, and you should see the output turn to false. This is because, without fromJS(), the deeply nested object will not be converted to a Map.
 
-// …a set of function arguments
+//a set of function arguments
 
 // You can create a Map from an arbitrary number of function arguments, with each pair of arguments interpreted as a key/value pair. Just remember to create your Map with Map.of()
 
@@ -119,9 +123,9 @@ true
 const avengersMap = Immutable.Map.of(
   'ironMan', 'Tony Stark', 'captainAmerica', 'Steve Rogers'
 );
-​
+
 // Output:
-avengersMap;
+console.log(avengersMap);
 
 Object {
   "captainAmerica": "Steve Rogers",
@@ -134,22 +138,22 @@ Object {
 
 
 // New Map from existing JavaScript iterator (Array.map example)
-​
+
 // Note: an ES6 object is not an iterator, so we'll use an array instead
 const avengersArray = ['ironMan' , 'captainAmerica'];
-​
+ 
 const avengersMap = Immutable.Map(avengersArray.map(
   (item, index) => ([ 'heroName' + index, item ])));
-​
+
 // Output:
-avengersMap;
+console.logavengersMap);
 
 Object {
   "heroName0": "ironMan",
     "heroName1": "captainAmerica",
 }
 
-// …an Immutable List
+// an Immutable List
 
 // Just as when creating a Map from an array, the List must comprise a List of Lists, with each List item being a tuple that will be used as a key/value pair by the Map.
 
@@ -157,16 +161,16 @@ Object {
 // New Map from existing List
 const avengersList = Immutable.List([['heroName1', 'ironMan'], ['heroName2', 'captainAmerica']]);
 const avengersMap = Immutable.Map(avengersList);
-​
+
 // Output:
-avengersMap;
+console.log(avengersMap);
 
 Object {
   "heroName1": "ironMan",
     "heroName2": "captainAmerica",
 }
 
-…an Immutable Map
+    //an Immutable Map
 
 
 // New Map from existing Map
@@ -175,11 +179,11 @@ const avengersMap = Immutable.Map({
   hero2: 'captainAmerica',
   hero3: 'blackWidow'
 });
-​
+
 const newAvengersMap = Immutable.Map(avengersMap);
-​
+
 // Output:
-newAvengersMap;
+console.log(newAvengersMap);
 
 Object {
   "hero1": "ironMan",
