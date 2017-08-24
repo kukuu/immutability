@@ -25,24 +25,16 @@ It’s the difference between asking “Who is the Prime Minister of United King
 
 Accordingly, any operation you perform on the data within an Immutable collection (e.g. add or remove an item) will change the state of that data at a later point in time, but the state of the data as it existed before the operation remains unchanged. What you’re left with after the operation is two collections – the first represents the state of the data before the operation, and the second represents the state of the data after the operation.
 
-```
 
-FEATURED
-Immutable.js: An Introduction with examples written for humans
+## What is Immutable.js?
 
-Mike Evans3rd October 2016
-
-Immutable.js is an awesome library for creating Immutable collections of data, hugely popular for React/Redux development, but not blessed with great documentation. Struggle no more, with this first in a series of in-depth tutorials, complete with live coding examples.
-
-What is Immutable.js?
-
-Immutable.js (or just Immutable from now on) is a library for creating collections of data, which, once created, cannot be changed. These collections are modelled on JavaScript’s Array, Map and Set objects, but with the significant difference that all methods to add, delete or update data in a collection do not mutate (i.e. change) the collection being acted upon.
+Immutable.js is a library for creating collections of data, which, once created, cannot be changed. These collections are modelled on JavaScript’s Array, Map and Set objects, but with the significant difference that all methods to add, delete or update data in a collection do not mutate (i.e. change) the collection being acted upon.
 
 For example, Immutable’s push() method, which adds an item of data to an Immutable List, actually adds the item to a new copy of the List, leaving the original List collection completely unchanged.
 
 To see this, the following shows a standard JavaScript Array’s push() method acting on (and mutating) the array itself:
 
-
+```
 // Standard mutating JavaScript Array push
 const collection = ['ironMan'];
 collection.push('captainAmerica');
@@ -68,12 +60,13 @@ collection;
 Array [
   "ironMan",
 ]
+```
 
 In this example, collection's push() method makes a copy of collection and pushes the new item onto the copy, leaving collection itself completely unchanged.
 
 To see the result of the push() method, we need to assign a new variable to it, as push returns the copy.
 
-
+```
 // Immutable.js non-mutating List.push
 const collection = Immutable.List.of('ironMan');
 const newCollection = collection.push('captainAmerica');
@@ -85,8 +78,9 @@ Array [
   "ironMan",
   "captainAmerica",
 ]
+```
 
-Getting your head around Immutable collections
+Getting  heads around Immutable collections
 
 Immutable lets us create complex objects comprising such things as JavaScript objects, arrays, or even nested arrays of objects with arrays, with each complex object acting as an unchanging value. However, this is difficult to picture, as we’re so used to JavaScript objects containing properties with constantly changing values. Think of a user object, for example, containing properties such as username, emailAddress, age, etc. These values could change at any time.
 
@@ -108,7 +102,7 @@ Another way to think of an Immutable collection is to think of it as the state o
 
 So whenever we query a collection to retrieve its data, we’re not saying to the collection “give me your data now”, we’re actually saying “give me your data as it existed when you (i.e. the collection) were first created.”
 
-It’s the difference between asking “Who is the President of the United States right now” – which obviously depends on when you ask the question – and “Who was the President of the United States on August 13th 2016″ – which is a fact that will never change.
+It’s the difference between asking “Who is the Prime Minister of the United Kingdom right now” – which obviously depends on when you ask the question – and “Who was the Prime Minister of the United Kingdom on May 22nd 2017″ – which is a fact that will never change.
 
 Accordingly, any operation you perform on the data within an Immutable collection (e.g. add or remove an item) will change the state of that data at a later point in time, but the state of the data as it existed before the operation remains unchanged. What you’re left with after the operation is two collections – the first represents the state of the data before the operation, and the second represents the state of the data after the operation.
 
